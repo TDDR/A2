@@ -14,15 +14,13 @@ public class StWV {
 	public static void main(String[] args) throws Exception {
 		 
 	    //load dataset
-	    DataSource source = 
-		 new DataSource("C:/Users/TIM/Documents/BSD_winter 2020/BTP 400 Software 2 - Java/A2/imdb/Train.arff");
-	  
+	    DataSource source = new DataSource("C:/Users/TIM/Documents/BSD_winter 2020/BTP 400 Software 2 - Java/A2/imdb/Train.arff");
 	    Instances dataset = source.getDataSet();
+	    
 	    //set class index to the last attribute
 	    dataset.setClassIndex(dataset.numAttributes()-1);
 	  
 	    NGramTokenizer gram = new NGramTokenizer(); //(min = 1 token, max = 3 tokens)
-	  
 	  
 	    String options[] = new String[2];
 	  
@@ -34,7 +32,6 @@ public class StWV {
 	    StringToWordVector filter = new StringToWordVector();
 		  
 	    filter.setOptions(options);
-		  
 	    filter.setTokenizer(gram);
 	    filter.setInputFormat(dataset);
 	    filter.setIDFTransform(true);
@@ -42,7 +39,6 @@ public class StWV {
 		filter.setLowerCaseTokens(true);
 		filter.setOutputWordCounts(true);
 		 
-		  
 	    //Apply the filter to our data
 	    Instances newData = Filter.useFilter(dataset, filter);
 	  
