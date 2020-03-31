@@ -6,11 +6,11 @@ import weka.core.converters.ConverterUtils.DataSource;
 import weka.classifiers.lazy.IBk;
 
 public class Predict {
-
+	
 		public static void main(String[] args) throws Exception {
 		 	 
 		    //Load training data
-		    DataSource source = new DataSource("C:/Users/TIM/Documents/BSD_winter 2020/BTP 400 Software 2 - Java/A2/imdb/TrainAttribute.arff");
+		    DataSource source = new DataSource("../A2/imdb/TrainAS.arff");
 		    Instances trainingData = source.getDataSet();
 
 		    //Set class index to the last attribute (pos, neg)
@@ -21,7 +21,7 @@ public class Predict {
 		    ibk.buildClassifier(trainingData);
 		    
 		    //Load data to make predictions on
-		    DataSource source2 =  new DataSource("C:/Users/TIM/Documents/BSD_winter 2020/BTP 400 Software 2 - Java/A2/imdb/Test.arff");  
+		    DataSource source2 =  new DataSource("../A2/imdb/Test.arff");  
 		    Instances testingData = source2.getDataSet();   
 		    
 		    //Set class index to the last attribute (pos, neg)

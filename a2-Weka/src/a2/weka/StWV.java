@@ -14,7 +14,7 @@ public class StWV {
 	public static void main(String[] args) throws Exception {
 		 
 	    //load dataset
-	    DataSource source = new DataSource("C:/Users/TIM/Documents/BSD_winter 2020/BTP 400 Software 2 - Java/A2/imdb/Train.arff");
+	    DataSource source = new DataSource("..A2/imdb/Train.arff");
 	    Instances dataset = source.getDataSet();
 	    
 	    //set class index to the last attribute
@@ -46,8 +46,7 @@ public class StWV {
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(newData); //set the data to convert
 		
-		saver.setFile(new File("C:/Users/TIM/Documents/BSD_winter 2020/BTP 400 Software 2 - Java/A2/imdb/TrainFiltered3.arff"));
+		saver.setFile(new File("../A2/imdb/TrainStWV.arff"));
 		saver.writeBatch();
-  
 	}
 }

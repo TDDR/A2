@@ -12,7 +12,7 @@ public class ConvertData {
 		
 		//Load CSV
 		CSVLoader loader = new CSVLoader();
-		loader.setSource(new File("C:/Users/TIM/Documents/BSD_winter 2020/BTP 400 Software 2 - Java/A2/imdb/Test.csv"));
+		loader.setSource(new File("../A2/imdb/csv/Test.csv"));
 		
 		Instances data = loader.getDataSet(); //get instances object
 		
@@ -20,7 +20,7 @@ public class ConvertData {
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(data); //set the data to convert
 		
-		saver.setFile(new File("C:/Users/TIM/Documents/BSD_winter 2020/BTP 400 Software 2 - Java/A2/imdb/Test.arff"));
+		saver.setFile(new File("../A2/imdb/Test.arff"));
 		saver.writeBatch();
 	}
 }
